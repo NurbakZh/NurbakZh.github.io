@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/NurbakZh.github.io/static/js/main.f12db4af.js",
-    "index.html": "/NurbakZh.github.io/index.html",
-    "main.f12db4af.js.map": "/NurbakZh.github.io/static/js/main.f12db4af.js.map"
+    "main.js": "/static/js/main.f12db4af.js",
+    "index.html": "/index.html",
+    "main.f12db4af.js.map": "/static/js/main.f12db4af.js.map"
   },
   "entrypoints": [
     "static/js/main.f12db4af.js"
