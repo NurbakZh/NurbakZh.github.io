@@ -2,7 +2,8 @@
   "name": "todolist",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://NurbakZh.github.io/NurbakZh.github.io",
+  "homepage": "https://NurbakZh.github.io",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -26,7 +27,7 @@
   },
   "scripts": {
     "predeploy": "GENERATE_SOURCEMAP=false && npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "GENERATE_SOURCEMAP=false && gh-pages -d build",
     "start": "GENERATE_SOURCEMAP=false && react-scripts start",
     "build": "GENERATE_SOURCEMAP=false && react-scripts build",
     "test": "GENERATE_SOURCEMAP=false && react-scripts test",

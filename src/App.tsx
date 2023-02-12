@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {Typography, AppBar, Toolbar, Box, containerClasses} from '@mui/material';
+import {Typography, AppBar, Toolbar, Box } from '@mui/material';
 import { ToDoAdd } from './components/ToDoAdd';
 import { ToDoList } from "./components/ToDoList";
 import { Address, Abi } from './config';
@@ -41,7 +41,7 @@ function App() {
         load().then((s) => {
             setToDos(s);
         });
-    },[setToDos, toDos, contract]);
+    },[setToDos, contract, account]);
 
     const handleListClick = useCallback(async (toDos: ToDo[]) => {
         setToDos(toDos);
@@ -50,13 +50,14 @@ function App() {
             if (toDo.status) {
                 indexesToDelete.push(toDos[index]['taskId']);
             }
+            return toDo;
         });
         alert("Well done, removing completed tasks..");
         for (let i = 0; i < indexesToDelete.length; i++) {
             await contract?.methods.removeTask(indexesToDelete[i]).send ({from: account});
         }
         alert("Tasks removed");
-    },[setToDos]);
+    },[setToDos, contract?.methods, account]);
 
     return (
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
